@@ -12,7 +12,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <Link href='https://reactjs.org'>
-          Learn React
+          Learn React Aloha!
         </Link>
       </header>
     </div>
