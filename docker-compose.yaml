@@ -12,7 +12,7 @@ services:
     container_name: api
     image: node:18.14.2-slim
     volumes:
-      - ./my-librepod-api:/usr/src/app
+      - ./apps/my-librepod-api:/usr/src/app
       - api_node_modules:/usr/src/app/node_modules
     ports:
       - 3000:3000
@@ -28,7 +28,7 @@ services:
     container_name: web
     image: node:18.14.2-slim
     volumes:
-      - ./my-librepod-web-client:/usr/src/app
+      - ./apps/my-librepod-web-client:/usr/src/app
       - web_node_modules:/usr/src/app/node_modules
     ports:
       - 8080:3000
