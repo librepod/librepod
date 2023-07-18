@@ -1,18 +1,37 @@
-import { Controller, Get, Post } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
-import { CreateEntityResponse } from 'src/common/responses/create-entity.response';
-import { InstancesListResponse } from './responses/instances-list.response';
+import { Body, Controller, Get, Post, Put } from '@nestjs/common';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { UpdateInstanceDto } from './dto/update-instance.dto';
+import { Instance } from './entities/instance.entity';
+import { CreateInstanceDto } from './dto/create-instance.dto';
 
 @ApiTags('instances')
 @Controller('instances')
 export class InstancesController {
   @Get()
-  getList(): InstancesListResponse {
-    return new InstancesListResponse();
+  @ApiResponse({
+    status: 200,
+    type: Instance,
+    isArray: true,
+  })
+  getList(): Array<Instance> {
+    return null;
   }
 
   @Post()
-  create(): CreateEntityResponse {
-    return new CreateEntityResponse();
+  @ApiResponse({
+    status: 200,
+    type: CreateInstanceDto,
+  })
+  create(@Body() createInstanceDto: CreateInstanceDto): Instance {
+    return null;
+  }
+
+  @Put()
+  @ApiResponse({
+    status: 200,
+    type: Instance,
+  })
+  update(@Body() updateInstanceDto: UpdateInstanceDto): Instance {
+    return null;
   }
 }

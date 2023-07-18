@@ -2,5 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateEntityResponse {
   @ApiProperty()
-  message: string;
+  public id: string;
+  @ApiProperty()
+  public message: string;
 }
