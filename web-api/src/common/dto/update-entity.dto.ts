@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class DeleteEntityReponse {
+export class UpdateEntityDto {
   @ApiProperty()
   message: string;
 }
