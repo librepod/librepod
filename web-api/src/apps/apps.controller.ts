@@ -1,13 +1,13 @@
-import { AppsService } from './apps.service';
+// import { AppsService } from './apps.service';
 
-export class AppsController {
-  constructor(private appsService: AppsService) {}
+// export class AppsController {
+//   constructor(private appsService: AppsService) {}
 
-  getOne(): object {
-    return null;
-  }
+//   getOne(): object {
+//     return null;
+//   }
 
-  getList(): Promise<Array<object>> {
-    return this.appsService.getAll();
-  }
-}
+//   getList(): Promise<Array<object>> {
+//     return this.appsService.getAll();
+//   }
+// }

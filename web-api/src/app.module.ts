@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { InstancesModule } from './instances/instances.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { StoresModule } from './stores/stores.module';
 
 @Module({
   imports: [
@@ -10,14 +11,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: '',
-      password: '',
-      database: '',
+      username: 'libreadmin',
+      password: 'librepassword',
+      database: 'librepod',
       entities: ['**/*.entity{.ts,.js}'],
       migrationsTableName: 'migration',
       migrations: ['src/migration/*.ts'],
       autoLoadEntities: true,
     }),
+    StoresModule,
     InstancesModule,
   ],
   controllers: [AppController],
