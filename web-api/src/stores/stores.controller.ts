@@ -4,14 +4,26 @@ import { StoresService } from './stores.service';
 import { CreateStoreDto } from './dto/create-store.dto';
 import { UpdateStoreDto } from './dto/update-store.dto';
 import { CreateEntityDto, DeleteEntityDto, UpdateEntityDto } from 'src/common/dto';
+import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { StoreDetailsDto } from './dto/store-details.dto';
 
+@ApiTags('stores')
 @Controller('stores')
 export class StoresController {
   constructor(private storesService: StoresService) {}
 
   @Get()
-  getList(): Promise<Array<Store>> {
-    return this.storesService.find();
+  @ApiOperation({ summary: 'Get all stores' })
+  @ApiOkResponse({ type: StoreDetailsDto, isArray: true })
+  async getList(): Promise<StoreDetailsDto[]> {
+    const stores = await this.storesService.find();
+    return stores.map((store) => {
+      return {
+        id: store.id,
+        name: store.name,
+        specificationFilePath: store.specificationFilePath,
+      };
+    });
   }
 
   @Post()
