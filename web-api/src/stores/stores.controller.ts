@@ -1,11 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { Store } from './entities/store.entity';
 import { StoresService } from './stores.service';
-import { CreateStoreDto } from './dto/create-store.dto';
-import { UpdateStoreDto } from './dto/update-store.dto';
+import { StoreDetailsDto, CreateStoreDto, UpdateStoreDto } from './dto';
 import { CreateEntityDto, DeleteEntityDto, UpdateEntityDto } from 'src/common/dto';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { StoreDetailsDto } from './dto/store-details.dto';
 
 @ApiTags('stores')
 @Controller('stores')
