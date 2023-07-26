@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { InstancesModule } from './instances/instances.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { StoresModule } from './stores/stores.module';
 
@@ -14,13 +13,11 @@ import { StoresModule } from './stores/stores.module';
       username: 'libreadmin',
       password: 'librepassword',
       database: 'librepod',
-      entities: ['**/*.entity{.ts,.js}'],
+      entities: ['dist/**/*.entity{.ts,.js}'],
       migrationsTableName: 'migrations',
-      migrations: ['src/database/migrations/*.ts'],
-      autoLoadEntities: true,
+      migrations: ['dist/database/migrations/*.ts'],
     }),
     StoresModule,
-    InstancesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
