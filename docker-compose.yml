@@ -5,7 +5,7 @@ networks:
     name: "librepod-network"
 
 volumes:
-  liprepod-db-data:
+  librepod-db-data:
     name: "librepod-db-data"
 
 services:
@@ -24,4 +24,3 @@ services:
       - librepod-network
     ports:
       - 5432:5432
-      
