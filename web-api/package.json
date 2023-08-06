@@ -23,6 +23,7 @@
     "migration:run": "npx typeorm-ts-node-commonjs migration:run -d ./src/typeorm.config.ts"
   },
   "dependencies": {
+    "@kubernetes/client-node": "^0.18.1",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^9.0.0",
@@ -33,7 +34,8 @@
     "pg": "^8.11.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.17",
+    "typescript-json-serializer": "^6.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",

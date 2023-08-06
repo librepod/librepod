@@ -3,22 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { StoresModule } from './stores/stores.module';
+import { KubernetesModule } from './kubernetes/kubernetes.module';
 
 @Module({
-  imports: [
-    // TypeOrmModule.forRoot({
-    //   type: 'postgres',
-    //   host: 'localhost',
-    //   port: 5432,
-    //   username: 'libreadmin',
-    //   password: 'librepassword',
-    //   database: 'librepod',
-    //   entities: ['dist/**/*.entity{.ts,.js}'],
-    //   migrationsTableName: 'migrations',
-    //   migrations: ['dist/database/migrations/*.ts'],
-    // }),
-    StoresModule,
-  ],
+  imports: [StoresModule, KubernetesModule],
   controllers: [AppController],
   providers: [AppService],
 })

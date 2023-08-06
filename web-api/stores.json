@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "items": [
+    {
+      "id": "ce42fa22-3494-40fb-ae12-5ad2bbb613f2",
+      "name": "LibrePod",
+      "specificationFilePath": "https://librepod.github.io/charts/index.yaml"
+    }
+  ]
+}
