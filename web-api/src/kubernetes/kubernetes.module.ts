@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { KubernetesService } from './kubernetes.service';
+import { KubernetesService } from './services/kubernetes.service';
 
 @Module({
   providers: [KubernetesService],
