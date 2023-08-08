@@ -1,1 +1,1 @@
-# my-librepod
+# LibrePod
