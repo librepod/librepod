@@ -24,6 +24,7 @@ export class StoresController {
   }
 
   @Post()
+  @ApiOperation({ summary: 'Create new store' })
   async create(@Body() createStoreDto: CreateStoreDto): Promise<CreateEntityDto> {
     const store = await this.storesService.create(createStoreDto);
     return {
@@ -32,7 +33,8 @@ export class StoresController {
     };
   }
 
-  @Put()
+  @Put(':id')
+  @ApiOperation({ summary: 'Update store' })
   async update(@Param('id') id: string, @Body() updateStoreDto: UpdateStoreDto): Promise<UpdateEntityDto> {
     await this.storesService.update(id, updateStoreDto);
     return {
@@ -40,7 +42,8 @@ export class StoresController {
     };
   }
 
-  @Delete()
+  @Delete(':id')
+  @ApiOperation({ summary: 'Delete store' })
   async delete(@Param('id') id: string): Promise<DeleteEntityDto> {
     await this.storesService.delete(id);
     return {
