@@ -1,9 +1,9 @@
-import { Injectable, NotImplementedException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Store } from '../models/store.model';
 import { UpdateStoreDto } from '../dto/update-store.dto';
 import { CreateStoreDto } from '../dto/create-store.dto';
 import { KubeConfig, CoreV1Api } from '@kubernetes/client-node';
-import { KubernetesService } from 'src/kubernetes/kubernetes.service';
+import { KubernetesService } from 'src/kubernetes/services/kubernetes.service';
 import { JsonSerializer } from 'typescript-json-serializer';
 import { StoresOptions } from '../options/stores.options';
 import { v4 as uuidv4 } from 'uuid';
