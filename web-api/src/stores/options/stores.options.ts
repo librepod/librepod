@@ -1,8 +1,8 @@
 import { JsonObject, JsonProperty } from 'typescript-json-serializer';
-import { Store } from '../entities/store.entity';
+import { Store } from '../models/store.model';
 
 @JsonObject()
-export class StoresConfig {
+export class StoresOptions {
   @JsonProperty()
   items: Array<Store>;
 }

@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { StoresService } from './stores.service';
-import { StoreDetailsDto, CreateStoreDto, UpdateStoreDto } from './dto';
+import { StoresService } from '../services/stores.service';
+import { StoreDetailsDto, CreateStoreDto, UpdateStoreDto } from '../dto';
 import { CreateEntityDto, DeleteEntityDto, UpdateEntityDto } from 'src/common/dto';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
@@ -13,7 +13,7 @@ export class StoresController {
   @ApiOperation({ summary: 'Get all stores' })
   @ApiOkResponse({ type: StoreDetailsDto, isArray: true })
   async getList(): Promise<StoreDetailsDto[]> {
-    const stores = await this.storesService.find();
+    const stores = await this.storesService.getAll();
     return stores.map((store) => {
       return {
         id: store.id,
