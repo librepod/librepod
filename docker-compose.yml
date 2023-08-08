@@ -1,0 +1,26 @@
+version: "3.9"
+
+networks:
+  librepod-network:
+    name: "librepod-network"
+
+volumes:
+  librepod-db-data:
+    name: "librepod-db-data"
+
+services:
+  librepod-db:
+    container_name: "librepod-db"
+    image: postgres:15.3
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=librepod
+      - POSTGRES_USER=libreadmin
+      - POSTGRES_PASSWORD=librepassword
+      - PGDATA=/data/postgres
+    volumes:
+      - librepod-db-data:/data/postgres
+    networks:
+      - librepod-network
+    ports:
+      - 5432:5432
