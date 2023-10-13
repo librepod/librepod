@@ -4,6 +4,7 @@ import { DashboardRoute } from "../features/dashboard/routes/DashboardRoute";
 import { StoresRoute } from "../features/stores/routes/StoresRoute";
 import { SettingsRoute } from "../features/settings/routes/SettingsRoute";
 import { AppsRoute } from "../features/apps/routes/AppsRoute";
+import { KubernetesRoute } from "../features/kubernetes/routes/KubernetesRoute";
 
 const App = () => {
   return (
@@ -20,8 +21,9 @@ export const protectedRoutes = [
     children: [
       { path: "/apps", element: <AppsRoute /> },
       { path: "/dashboard", element: <DashboardRoute /> },
-      { path: "/store", element: <StoresRoute /> },
+      { path: "/stores", element: <StoresRoute /> },
       { path: "/settings", element: <SettingsRoute /> },
+      { path: "/kubernetes", element: <KubernetesRoute /> },
     ],
   },
 ];

@@ -1,4 +1,4 @@
-export type Store = {
+export type AppStoreProvider = {
   id: string;
   name: string;
   description: string;
