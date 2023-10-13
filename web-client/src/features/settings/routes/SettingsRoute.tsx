@@ -2,7 +2,7 @@ import React from "react";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab } from "@mui/material";
 import { useState } from "react";
-import { AppStoreSettings } from "../components/AppStoreSettings";
+// import { AppStoreSettings } from "../components/AppStoreSettings";
 
 export const SettingsRoute = () => {
   const [value, setValue] = useState("store");
@@ -17,9 +17,7 @@ export const SettingsRoute = () => {
         <TabList onChange={handleTabChange}>
           <Tab label="Store" value="store"></Tab>
         </TabList>
-        <TabPanel value="store">
-          <AppStoreSettings />
-        </TabPanel>
+        <TabPanel value="store">{/* <AppStoreSettings /> */}</TabPanel>
       </TabContext>
     </Box>
   );
