@@ -8,4 +8,4 @@ import { KubernetesModule } from 'src/kubernetes/kubernetes.module';
   controllers: [StoresController],
   providers: [StoresService],
 })
-export class StoresModule {}
+export class AppStoreModule {}

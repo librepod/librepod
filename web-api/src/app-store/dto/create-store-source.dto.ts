@@ -1,5 +1,4 @@
-export class Store {
-  id: string;
+export class CreateStoreSourceDto {
   name: string;
   specificationFilePath: string;
 }
