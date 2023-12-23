@@ -10,7 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { App } from "../types/App";
 
-export const AppsRoute = () => {
+export const MyAppsRoute = () => {
   const [apps, setApps] = useState(Array<App>);
 
   useEffect(() => {});

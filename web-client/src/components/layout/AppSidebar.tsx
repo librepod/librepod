@@ -19,11 +19,17 @@ export function AppSidebar() {
           </ListItemIcon>
           <ListItemText>Dashboard</ListItemText>
         </MenuItem>
-        <MenuItem component={NavLink} to="/store">
+        <MenuItem component={NavLink} to="/my-apps">
+          <ListItemIcon>
+            <Dashboard />
+          </ListItemIcon>
+          <ListItemText>My Apps</ListItemText>
+        </MenuItem>
+        <MenuItem component={NavLink} to="/app-store">
           <ListItemIcon>
             <Store />
           </ListItemIcon>
-          <ListItemText>Store</ListItemText>
+          <ListItemText>App Store</ListItemText>
         </MenuItem>
         <Divider></Divider>
         <MenuItem component={NavLink} to="/settings">
