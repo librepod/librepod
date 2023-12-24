@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
-import { DashboardOutlined } from "@ant-design/icons";
+import {
+  DashboardOutlined,
+  AppstoreOutlined,
+  AppstoreAddOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
@@ -23,18 +28,18 @@ export const AppSider: React.FC<AppSiderProps> = () => {
           <Link to="dashboard" />
         </Menu.Item>
         <Menu.Item>
-          <DashboardOutlined rev={undefined} />
+          <AppstoreOutlined />
           <span>My Apps</span>
           <Link to="my-apps" />
         </Menu.Item>
         <Menu.Item>
-          <DashboardOutlined rev={undefined} />
+          <AppstoreAddOutlined />
           <span>App Store</span>
           <Link to="app-store" />
         </Menu.Item>
         <Menu.Divider></Menu.Divider>
         <Menu.Item>
-          <DashboardOutlined rev={undefined} />
+          <SettingOutlined />
           <span>Settings</span>
           <Link to="settings" />
         </Menu.Item>

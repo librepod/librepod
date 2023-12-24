@@ -14,7 +14,7 @@ export const AppStoreRoute = () => {
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
             />
           }
-          actions={[<EllipsisOutlined rev={undefined} key="ellipsis" />]}
+          actions={[<EllipsisOutlined key="ellipsis" />]}
         >
           <Meta title="Application" description="Application Description" />
         </Card>
