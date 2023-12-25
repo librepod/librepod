@@ -1,5 +1,4 @@
-import { EllipsisOutlined } from "@ant-design/icons";
-import { Card, Flex } from "antd";
+import { Button, Card, Flex } from "antd";
 
 const { Meta } = Card;
 
@@ -14,7 +13,12 @@ export const AppStoreRoute = () => {
               src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
             />
           }
-          actions={[<EllipsisOutlined key="ellipsis" />]}
+          actions={[
+            <Button key="install" type="primary">
+              Install
+            </Button>,
+            <Button key="details">Details</Button>,
+          ]}
         >
           <Meta title="Application" description="Application Description" />
         </Card>
