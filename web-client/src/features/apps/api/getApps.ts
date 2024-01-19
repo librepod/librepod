@@ -1,10 +1,6 @@
 import { App } from "../types/App";
 
-// const defaultStoreUrl = "https://librepod.github.io/charts/index.yaml";
-
 export const getApps = async (): Promise<Array<App>> => {
-  // const data = await fetch(defaultStoreUrl);
-
   return [
     {
       id: "",
@@ -20,7 +16,6 @@ export const getApps = async (): Promise<Array<App>> => {
     },
     {
       id: "",
-
       name: "bitwarden",
       icon: "https://avatars.githubusercontent.com/u/15990069",
       description:
@@ -28,7 +23,6 @@ export const getApps = async (): Promise<Array<App>> => {
     },
     {
       id: "",
-
       name: "filebrowser",
       icon: "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png",
       description:
@@ -36,14 +30,12 @@ export const getApps = async (): Promise<Array<App>> => {
     },
     {
       id: "",
-
       name: "firefly-iii",
       icon: "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefly.png",
       description: "A free and open source personal finance manager",
     },
     {
       id: "",
-
       name: "firefly-iii-telegram-bot",
       icon: "",
       description:

@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
-import { AppLayout } from "../components/layout/AppLayout";
+import { AppLayout } from "../components/AppLayout";
 import { DashboardRoute } from "../features/dashboard/routes/DashboardRoute";
-import { StoresRoute } from "../features/stores/routes/StoresRoute";
+import { AppStoreRoute } from "../features/app-store/routes/AppStoreRoute";
 import { SettingsRoute } from "../features/settings/routes/SettingsRoute";
-import { AppsRoute } from "../features/apps/routes/AppsRoute";
+import { MyAppsRoute } from "../features/my-apps/routes/AppsRoute";
 
 const App = () => {
   return (
@@ -18,9 +18,9 @@ export const protectedRoutes = [
     path: "/",
     element: <App />,
     children: [
-      { path: "/apps", element: <AppsRoute /> },
+      { path: "/my-apps", element: <MyAppsRoute /> },
       { path: "/dashboard", element: <DashboardRoute /> },
-      { path: "/store", element: <StoresRoute /> },
+      { path: "/app-store", element: <AppStoreRoute /> },
       { path: "/settings", element: <SettingsRoute /> },
     ],
   },
