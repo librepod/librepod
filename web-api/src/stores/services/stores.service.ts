@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Store } from '../models/store.model';
+import { Store } from '../models/store-source.model';
 import { UpdateStoreDto } from '../dto/update-store.dto';
 import { CreateStoreDto } from '../dto/create-store.dto';
 import { KubeConfig, CoreV1Api } from '@kubernetes/client-node';
