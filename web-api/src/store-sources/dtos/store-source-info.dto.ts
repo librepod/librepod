@@ -1,10 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class StoreDetailsDto {
+export class StoreSourceInfoDto {
   @ApiProperty()
   id: string;
   @ApiProperty()
   name: string;
   @ApiProperty()
-  specificationFilePath: string;
+  specificationPath: string;
 }
