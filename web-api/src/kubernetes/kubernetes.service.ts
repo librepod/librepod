@@ -14,4 +14,10 @@ export class KubernetesService {
     const response = await api.readNamespacedConfigMap(name, namespace);
     return response.body;
   }
+
+  async patchConfigMap(name: string, namespace: string, data: any): Promise<V1ConfigMap> {
+    const api = this.createCoreApi();
+    const response = await api.patchNamespacedConfigMap(name, namespace, data);
+    return response.body;
+  }
 }

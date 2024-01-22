@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { StoreSourcesController } from './store-sources.controller';
 import { StoreSourcesService } from './store-sources.service';
+import { KubernetesModule } from 'src/kubernetes/kubernetes.module';
 
 @Module({
-  imports: [],
   controllers: [StoreSourcesController],
   providers: [StoreSourcesService],
-  exports: [],
+  imports: [KubernetesModule],
 })
 export class StoreSourcesModule {}
