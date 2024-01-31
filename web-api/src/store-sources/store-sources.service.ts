@@ -42,54 +42,21 @@ export class StoreSourcesService {
   }
 
   async create(storeSourceCreateDto: StoreSourceCreateDto): Promise<string> {
-    // await this.initialize();
-
-    const storeSources = await this.getEntities();
+    const storeSources = await this.getList();
     const storeSource = {
       id: uuid(),
       ...storeSourceCreateDto,
     };
 
-    // this.storeSources = [storeSource, ...this.storeSources];
-
     const api = this.kubernetesService.createCoreApi();
-    // const storeSourceOptions: StoreSourceOptionsEntity = {
-    //   version: '1.0',
-    //   items: storeSources,
-    // };
-    // const storeSourceOptionsData = new JsonSerializer().serialize(storeSourceOptions);
-    // await api.patchNamespacedConfigMap('store-source', 'librepod', {
-    //   data: {
-    //     items: storeSourceOptionsData,
-    //   },
-    // });
 
-    const updatedList = [storeSource];
+    const updatedList = [...storeSources, storeSource];
     const storeSourceOptionsData = JSON.stringify(updatedList, null, 2);
-    const patch = [{ op: 'replace', path: '/data/items', value: storeSourceOptionsData }];
+    const patch = [{ op: 'add', path: '/data/items', value: storeSourceOptionsData }];
 
     const headers = { 'content-type': 'application/json-patch+json' };
 
     await api.patchNamespacedConfigMap('store-source', 'librepod', patch, undefined, undefined, undefined, undefined, undefined, { headers });
-    // await api.patchNamespacedConfigMap('store-source', 'librepod', {
-    //   data: {
-    //     items: storeSourceOptionsData,
-    //   },
-    // });
-
-    // const { body: configMap } = await api.patchNamespacedConfigMap(
-    //   'store-source',
-    //   'librepod',
-    //   {
-    //     data: { items: storeSourceOptionsData },
-    //   },
-    //   undefined,
-    //   undefined,
-    //   undefined,
-    //   undefined,
-    //   undefined,
-    //   { headers },
-    // );
 
     return storeSource.id;
   }
